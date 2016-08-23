@@ -8,6 +8,7 @@ parse
 sas_stmt_list
  : data_stmt
  | proc_stmt
+ | any_stmt
  ;
 
 set_stmt
@@ -28,3 +29,8 @@ proc_stmt
  : PROC ';'
  ; 
  
+any_stmt
+ : any_text
+ ;
+ 
+any_text : .;

@@ -1,0 +1,1 @@
+D:\programming\graphviz\release\bin\dot -Tpng -O %*  

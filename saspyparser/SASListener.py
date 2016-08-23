@@ -71,6 +71,24 @@ class SASListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by SASParser#any_stmt.
+    def enterAny_stmt(self, ctx:SASParser.Any_stmtContext):
+        pass
+
+    # Exit a parse tree produced by SASParser#any_stmt.
+    def exitAny_stmt(self, ctx:SASParser.Any_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by SASParser#any_text.
+    def enterAny_text(self, ctx:SASParser.Any_textContext):
+        pass
+
+    # Exit a parse tree produced by SASParser#any_text.
+    def exitAny_text(self, ctx:SASParser.Any_textContext):
+        pass
+
+
     # Enter a parse tree produced by SASParser#expression.
     def enterExpression(self, ctx:SASParser.ExpressionContext):
         pass

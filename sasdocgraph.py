@@ -5,12 +5,24 @@ from saspyparser import SASLexer
 from saspyparser import SASParser
 from saspyparser import SASListener
 
-class DataStepPrinter(SASListener.SASListener):     
-    def enterData_stmt(self, ctx):         
-        print("Oh, a Data Step!") 
+
+class DataStepPrinter(SASListener.SASListener):
+    def __init__(self):
+       self.fromDataSet =""
+       self.toDataSet =""
+     
+    def enterParse(self, ctx):
+        print("digraph {")
+     
+    def enterData_stmt(self, ctx):
+        self.toDataSet = ctx.dataset_name().getText()
 
     def enterSet_stmt(self, ctx):
-        print("with a set")
+        self.fromDataSet=ctx.dataset_name().getText()
+        print(self.fromDataSet + "->" + self.toDataSet)
+
+    def exitParse(self, ctx):
+        print("}")
 
 def main(argv):
     if len(argv) > 1:
